@@ -4,11 +4,11 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname + '/dist/college-data'));
+app.use(express.static(__dirname + '/dist/CollegeData'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/college-data/index.html'));
+res.sendFile(path.join(__dirname+'/dist/CollegeData/index.html'));
 });
 
 app.listen(process.env.PORT || 8080);
