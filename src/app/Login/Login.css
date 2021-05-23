@@ -1,0 +1,100 @@
+.button{
+    margin-left:9%;
+    justify-content: center;
+}
+.switch{
+    color: royalblue;
+    text-decoration: underline;
+}
+
+.active{
+    color: black;
+    background-color: white;
+}
+
+.switch:hover{
+    color: goldenrod;
+}
+.button .btn-primary :hover{
+    background-color: white;
+    color:royalblue;
+}
+.headingtext{
+    margin-top: 2%;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.form-control{
+    background-color: #f1f1f1;
+}
+.nav-link{
+    color: white;
+    font-size: 10px;
+}
+.nav-item{
+    margin: 0.5% 0.5%;
+    color: white;
+    border: solid;
+    border-width: 0.2px;
+    border-color: white;
+    transition: 0.4s ease;
+}
+.nav-item:hover{
+    color: black;
+    background-color: darkcyan;
+} 
+.yo{
+background-color: #e8a87c;
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("loginbackground.png");
+  background-size: cover;
+  height:100vh;
+  background-position: center;
+}
+
+
+
+.change{
+    margin: 10px 0px;
+    font-size:12px;
+    color: royalblue;
+}
+.change:hover{
+    text-decoration: underline;
+    color:orangered;
+}
+.subheading{
+    color: green;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.errortext{
+    margin-right: 2%;
+    font-size: 11px;
+    color: red;
+    text-align: center;
+}
+
+.loginbox{
+    background-color: white;
+    margin : 0px 3%;
+    padding: 1% 3%;
+    border-radius: 4%;
+    box-shadow: 2px 2px 1px 1px rgb(48, 45, 45);
+}
+
+.form-label{
+    font-size: 11px;
+    line-break: auto;
+}
+.form-control{
+    font-size: 11px;
+}
+
+.alert-sm{
+    margin-bottom:2px;
+    font-size: 10px;
+}

@@ -1,0 +1,123 @@
+<div style="height: 100vh" class="yo">
+  <ul class="nav nav-bar-sm justify-content-end ">
+    <li class="nav-item">
+      <a class="nav-link active" style="color:black" routerLink="/Home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/Home">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/Home">Contact Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/Login">SignUp</a>
+    </li>
+  </ul>
+  <div class="maincontain text-center">
+    <h1 class="main-heading">CHOOSING A COLLEGE COULD BE CONFUSING</h1>
+    <h5 class="main-subheading">BUT, WE ARE HERE TO HELP</h5>
+    <p style="color: white">WITH A LIST OF OVER 1500+ COLLEGES AND FACILITIES OFFERED BY THEM</p>
+  </div>
+
+</div>
+
+
+<div *ngIf="this.signInRequired" class="container-fluid items">
+  <div class="align-items">
+    <h1>You Aren't Logged In!</h1><br>
+    <label>Login to Continue </label><br>
+    <button type="button" class="btn btn-primary" routerLink="/Login">Login</button>
+  </div>
+</div>
+
+
+<div *ngIf="!this.signInRequired" class="container-fluid">
+  <div class="row">
+    <div class="col-9 lg-9 sm-12">
+
+      <div class="row">
+        <div class="col-8 sm-12">
+          <input type="search" class="form-control rounded searchbox" [(ngModel)]="this.collegename" (input)="Search()"
+          placeholder="Search by College Name.." aria-label="Search"
+            aria-describedby="search-addon" />
+        </div>
+        <div class="col-4 sm-12">
+            <div class="dropdown-sm">
+              <button type="button" class="btn-sm btn-primary dropdown-toggle button-txt"
+              data-toggle="dropdown" aria-haspopup="true">{{this.selected}}</button>
+      
+              <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <label (click)="clickeditem(i)" class="dropdown-item" *ngFor="let city of this.citiesandstates; let i=index">
+                  <small> {{city}}</small>
+                </label>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+
+
+      <table class="table-sm table-responsive table-striped table-hover text-center">
+        <thead>
+          <tr>
+            <th class="sort-button" style="width: 25%"><small><strong><label (click)="sort('name')">Name&#8645;</label></strong></small></th>
+            <th class="sort-button" style="width: 10%"><small><strong><label (click)="sort('year_founded')">Founded&#8645;</label></strong></small></th>
+            <th class="sort-button" style="width: 10%"><small><strong><label (click)="sort('city')">City&#8645;</label></strong></small></th>
+            <th class="sort-button" style="width: 10%"><small><strong><label (click)="sort('state')">State&#8645;</label></strong></small></th>
+            <th class="sort-button" style="width: 45%"><small><strong><label>Facilities Available</label></strong></small></th>
+          </tr>
+        </thead>
+        <tbody *ngIf="!this.loading">
+          <tr *ngFor="let college of this.collegedata |orderBy:key :reverse |paginate: {itemsPerPage:40,currentPage:p};">
+            <td class="col-element"><label class="college-name">{{college.Name}}</label></td>
+            <td class="col-element">{{college.Year}}</td>
+            <td class="col-element">{{college.City}}</td>
+            <td class="col-element">{{college.State}}</td>
+            <td class="col-element">{{college.Facilities}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="this.loading" class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+     </div>
+      <label *ngIf="this.collegedata.length==0" class="nodata">Oops... We weren't able to find a college with given details</label>
+      <pagination-controls  *ngIf="!(this.collegedata.length==0)" (pageChange)="p = $event"></pagination-controls>
+    </div>
+
+    <div class="col-2 lg-2 sm-12 lastcol">
+      
+      <div class="fixedright">
+          <div class="insidebox">
+            <div class="text-center box-heading">
+            <label >Choose Your Comforts</label>
+            </div>
+            <div class="choosefeatures">
+              <div class="row" *ngFor="let feature of this.features; let i=index">
+                <div class="col-2">
+                  <label name="abc" class="switch" >
+                    <input type="checkbox" (change)="selectedFeature(i)"/>
+                    <div class="slider round"></div>
+                  </label>
+                </div>
+                <div class="col-10">
+                  <label class="featurename">{{feature}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+  </div>
+</div>

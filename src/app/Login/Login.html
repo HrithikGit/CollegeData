@@ -1,0 +1,79 @@
+<div style="height: 100vh" class="yo">
+<ul class="nav nav-bar-sm justify-content-end ">
+  <li class="nav-item">
+    <a class="nav-link"  routerLink="/Home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/Home">About Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/Home">Contact Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" style="color:black" routerLink="/Login">SignIn</a>
+  </li>
+</ul>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4 col-sm-8 col-md-6 loginbox">
+      <h1 class="headingtext">{{this.heading}}</h1>
+      <h6 class="subheading">{{this.subheading}}</h6>
+
+      <div class="row">
+        <div class="col-6" *ngIf="!this.loggingIn" >
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-control" [(ngModel)]="user.FirstName"  placeholder="First Name">
+        </div>
+
+        <div class="col-6" *ngIf="!this.loggingIn">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-control" [(ngModel)]="user.LastName"  placeholder="Last Name">
+        </div>
+      </div>
+
+      <div>
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" [(ngModel)]="user.Email"  placeholder="name@example.com">
+      </div>
+
+      <div class="padding-left-none marging-left-none">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control"  (input)="validatePasswords()" [(ngModel)]="user.Password" placeholder="Enter Your Password">
+        <label *ngIf="!this.loggingIn && this.passworderror" class="errortext">Password length should be greater than 5</label>
+      </div> 
+
+      <div *ngIf=" !this.loggingIn">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" (input)="validatePasswords()" [(ngModel)]="passwordcheck" placeholder="Re-type Password">
+      </div>
+
+      <div class="container text-center">
+        <div *ngIf="!this.passwordsmatch && !this.loggingIn">
+          <label class="errortext">Passwords don't match</label>
+        </div>
+        
+        <div *ngIf="this.notexists">
+          <label class="errortext && this.loggingIn">Sorry,We weren't able to find any user with registered with provided Email</label>
+        </div>
+        
+        <div *ngIf=" !this.loggingIn">
+          <label (click)="switchFields()" class="change">Already Have an Account? Login Here!</label>
+        </div>
+        <div *ngIf="this.loggingIn">
+          <label (click)="switchFields()" class="change">Don't Have an Account? SignUp Here!</label>
+        </div>
+
+        <div *ngIf="this.notvalid" class="alert-sm alert-danger" role="alert">
+         <strong>Invalid Mail Id !</strong>
+        </div>
+          <button *ngIf="this.loggingIn" (click)="userLogin()" type="button" class="btn-sm margin-top-auto btn-primary">Login</button>
+          <button *ngIf="!this.loggingIn" (click)="userSignUp()" type="button" class="btn-sm btn-primary">Sign Up!</button>
+      </div>
+
+    </div>
+    <div class="col-lg-* col-sm-4 col-md-6 empty">
+    </div>
+  </div>
+</div>
+</div>
