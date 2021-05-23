@@ -26,6 +26,11 @@ This application enables to sort the colleges in the list with various attribute
 
 Users can also select desired features from a list of features provided by all colleges, to find colleges offering more number of features that a user selects.
 
+Here are Few Screenshots
+
+![alt text](https://github.com/HrithikGit/CollegeData/blob/main/src/app/Images/screenshot2.PNG?raw=true)
+
+![alt text](https://github.com/HrithikGit/CollegeData/blob/main/src/app/Images/screenshot1.PNG?raw=true)
 
 
 
