@@ -51,6 +51,8 @@ export class LoginComponent {
     this.subheading = "Welcome back";
   }
 
+
+  
    validatePasswords():void{
      if(this.user.Password.length<6){
        this.passworderror = true;
@@ -68,7 +70,7 @@ export class LoginComponent {
     this.passwordsmatch = true;
   }
 
-
+  //Validating Email-Id of user
   checkUsername(){
     var regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     return regexp.test(this.user.Email);
@@ -92,6 +94,7 @@ export class LoginComponent {
 
   }
 
+  //Signing up User
   userSignUp(): void{
     if(!this.passwordsmatch || this.user.Password.length<6){
       this.passworderror = true;
