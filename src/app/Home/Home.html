@@ -50,7 +50,7 @@
               data-toggle="dropdown" aria-haspopup="true">{{this.selected}}</button>
       
               <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <label (click)="clickeditem(i)" class="dropdown-item" *ngFor="let city of this.citiesandstates; let i=index">
+                <label (click)="selectedCity(i)" class="dropdown-item" *ngFor="let city of this.citiesandstates; let i=index">
                   <small> {{city}}</small>
                 </label>
               </div>
