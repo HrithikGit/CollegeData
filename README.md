@@ -1,28 +1,31 @@
 # CollegeData
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+## Frameworks Used
 
-## Development server
+>Angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+>BootStrap
 
-## Code scaffolding
+## Datastorage Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+>LocalStorage
 
-## Build
+(Used localStorage of browser to temporarily store details of user )
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+# About
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+This is an Angular Web Application developed to display details of various colleges given in a JSON format. 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+Only Users Logged In will be able to access the data in home page.
 
-## Further help
+The application provides search feature, wherein a user can search college with a college name. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# CollegeData" 
+This application enables to sort the colleges in the list with various attributes such as name, year founded and location of the college
+
+Users can also select desired features from a list of features provided by all colleges, to find colleges offering more number of features that a user selects.
+
+
+
+
