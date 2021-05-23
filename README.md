@@ -4,7 +4,7 @@
 
 >Angular
 
->BootStrap
+>Bootstrap
 
 ## Datastorage Used
 
