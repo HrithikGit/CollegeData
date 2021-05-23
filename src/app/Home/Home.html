@@ -71,7 +71,7 @@
             <th class="sort-button" style="width: 45%"><small><strong><label>Facilities Available</label></strong></small></th>
           </tr>
         </thead>
-        <tbody *ngIf="!this.loading">
+        <tbody >
           <tr *ngFor="let college of this.collegedata |orderBy:key :reverse |paginate: {itemsPerPage:40,currentPage:p};">
             <td class="col-element"><label class="college-name">{{college.Name}}</label></td>
             <td class="col-element">{{college.Year}}</td>
@@ -81,17 +81,6 @@
           </tr>
         </tbody>
       </table>
-      <div *ngIf="this.loading" class="loading">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-     </div>
       <label *ngIf="this.collegedata.length==0" class="nodata">Oops... We weren't able to find a college with given details</label>
       <pagination-controls  *ngIf="!(this.collegedata.length==0)" (pageChange)="p = $event"></pagination-controls>
     </div>
