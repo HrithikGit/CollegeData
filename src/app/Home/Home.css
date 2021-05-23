@@ -44,14 +44,11 @@
 }
 
 .items{
-    margin-top: 4%;
     display : flex;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("image.png");
     justify-content: space-around;
     align-items: center;
     
-}
-.align-items{
-    text-align: center;
 }
 .row{
     word-wrap: break-word;

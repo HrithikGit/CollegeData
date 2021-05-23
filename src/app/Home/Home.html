@@ -9,8 +9,11 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="/Home">Contact Us</a>
     </li>
-    <li class="nav-item">
+    <li *ngIf="this.signInRequired" class="nav-item">
       <a class="nav-link" routerLink="/Login">SignUp</a>
+    </li>
+    <li *ngIf="!this.signInRequired" class="nav-item">
+      <a class="nav-link" routerLink="/Login">SignOut</a>
     </li>
   </ul>
   <div class="maincontain text-center">
@@ -22,11 +25,11 @@
 </div>
 
 
-<div *ngIf="this.signInRequired" class="container-fluid items">
-  <div class="align-items">
-    <h1>You Aren't Logged In!</h1><br>
-    <label>Login to Continue </label><br>
-    <button type="button" class="btn btn-primary" routerLink="/Login">Login</button>
+<div *ngIf="this.signInRequired" style="height: 100vh" class="container-fluid items">
+  <div class="text-center">
+    <h1 style="color:white">YOU ARE JUST A STEP BEHIND TO VIEW DATA</h1><br>
+    <label style="color:white">LOGIN TO CONTINUE</label><br>
+    <button type="button" class="btn-sm btn-primary" routerLink="/Login">LOGIN HERE</button>
   </div>
 </div>
 
